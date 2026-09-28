@@ -1,0 +1,105 @@
+@use '@/styles/variables.scss' as *;
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+}
+
+.index {
+  flex-shrink: 0;
+  min-width: 56rpx;
+  margin-right: $spacing-sm;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  background: $color-primary-bg;
+  border-radius: $radius-sm;
+  padding: 2rpx $spacing-xs;
+  text-align: center;
+}
+
+.title {
+  flex: 1;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+}
+
+.remove {
+  flex-shrink: 0;
+  margin-left: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  padding: 4rpx 0 4rpx $spacing-sm;
+}
+
+.desc {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+  @include text-ellipsis-multi(2);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: $spacing-md;
+
+  /* 负边距抵消行末多余 gap，防止换行时右边溢出 */
+  margin-right: -$spacing-sm;
+}
+
+.badge {
+  font-size: $font-size-xs;
+  line-height: 1;
+  padding: 8rpx 12rpx;
+  border-radius: $radius-xs;
+  margin: 0 $spacing-sm $spacing-xs 0;
+  color: $color-text-secondary;
+  background: $color-bg-hover;
+  white-space: nowrap;
+}
+
+.brand {
+  color: $color-primary;
+  background: $color-primary-bg;
+}
+
+.gold {
+  color: $color-gold;
+  background: $color-gold-bg;
+  font-weight: $font-weight-medium;
+}
+
+.gradeA {
+  color: $color-primary;
+  background: $color-primary-bg;
+  font-weight: $font-weight-medium;
+}
+
+.gradeB {
+  color: $color-warning;
+  background: #fff3e5;
+}
+
+.gradeC {
+  color: $color-text-tertiary;
+  background: $color-bg-hover;
+}

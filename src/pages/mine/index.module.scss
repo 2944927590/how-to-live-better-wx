@@ -1,0 +1,116 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  padding: $spacing-lg $page-padding $spacing-xl;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.aboutTitle {
+  display: block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.aboutText {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+}
+
+.repoBtn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: $spacing-md;
+  height: $button-height-sm;
+  padding: 0 $spacing-lg;
+  border-radius: $radius-button;
+  background: $color-primary-bg;
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.repoBtnText {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  white-space: nowrap;
+}
+
+.docItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md 0;
+  border-bottom: 1rpx solid $color-divider;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.docTag {
+  flex-shrink: 0;
+  font-size: $font-size-xs;
+  color: $color-primary;
+  background: $color-primary-bg;
+  border-radius: $radius-xs;
+  padding: 4rpx 8rpx;
+  margin-right: $spacing-sm;
+}
+
+.docTitle {
+  flex: 1;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.docArrow {
+  flex-shrink: 0;
+  margin-left: $spacing-sm;
+  color: $color-text-disabled;
+}
+
+.guideTitle {
+  display: block;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-top: $spacing-md;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.guideText {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+  margin-top: $spacing-xs;
+}
+
+.disclaimer {
+  text-align: center;
+  padding: $spacing-lg;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  line-height: $line-height-loose;
+}

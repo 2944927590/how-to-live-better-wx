@@ -1,0 +1,190 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  padding-bottom: $spacing-xl;
+}
+
+.hero {
+  background: linear-gradient(160deg, $color-primary 0%, $color-primary-dark 100%);
+  padding: $spacing-xl $page-padding 48rpx;
+  color: $color-text-white;
+}
+
+.heroTitle {
+  display: block;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+}
+
+.heroSub {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-sm;
+  opacity: 0.88;
+  line-height: $line-height-normal;
+}
+
+.heroStats {
+  display: flex;
+  margin-top: $spacing-lg;
+}
+
+.statItem {
+  margin-right: $spacing-lg;
+}
+
+.statNum {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+}
+
+.statLabel {
+  display: block;
+  font-size: $font-size-xs;
+  opacity: 0.8;
+  margin-top: 4rpx;
+}
+
+.body {
+  padding: 0 $page-padding;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  height: 88rpx;
+  margin-top: -$spacing-xl;
+  background: $color-bg-card;
+  border-radius: $radius-round;
+  box-shadow: $shadow-float;
+  padding: 0 $spacing-lg;
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.searchIcon {
+  font-size: $font-size-lg;
+  color: $color-text-tertiary;
+  margin-right: $spacing-sm;
+}
+
+.searchPlaceholder {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+.sectionTitle {
+  display: block;
+  margin: $spacing-xl 0 $spacing-md;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+/* 紧急拨号卡 */
+.sosScroll {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.sosCard {
+  display: inline-block;
+  width: 168rpx;
+  margin-right: $spacing-sm;
+  padding: $spacing-md 0;
+  text-align: center;
+  background: $color-bg-card;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-md;
+  transition: all $transition-fast;
+  vertical-align: top;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.96);
+    border-color: $color-primary;
+  }
+}
+
+.sosNum {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-error;
+}
+
+.sosName {
+  display: block;
+  margin-top: 4rpx;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  white-space: nowrap;
+}
+
+/* 节目录 */
+.sectionList {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  overflow: hidden;
+}
+
+.sectionItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md $spacing-lg;
+  border-bottom: 1rpx solid $color-divider;
+  transition: all $transition-fast;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:active {
+    background: $color-bg-hover;
+  }
+}
+
+.sectionNum {
+  flex-shrink: 0;
+  width: 72rpx;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+.sectionName {
+  flex: 1;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.sectionCount {
+  flex-shrink: 0;
+  margin-left: $spacing-sm;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.sectionArrow {
+  flex-shrink: 0;
+  margin-left: $spacing-sm;
+  color: $color-text-disabled;
+  font-size: $font-size-md;
+}
+
+.footer {
+  margin-top: $spacing-xl;
+  padding: 0 $spacing-lg;
+  text-align: center;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  line-height: $line-height-loose;
+}

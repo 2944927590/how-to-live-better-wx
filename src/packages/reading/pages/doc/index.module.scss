@@ -1,0 +1,30 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  padding: $spacing-lg $page-padding $spacing-xl;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+}
+
+.title {
+  display: block;
+  margin-bottom: $spacing-lg;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: $line-height-tight;
+}
+
+.source {
+  display: block;
+  margin-top: $spacing-lg;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  line-height: $line-height-loose;
+  text-align: center;
+}

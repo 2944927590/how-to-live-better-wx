@@ -1,0 +1,205 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  padding: $spacing-lg $page-padding 200rpx;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.title {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: $line-height-tight;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: $spacing-md;
+  margin-right: -$spacing-sm;
+}
+
+.badge {
+  font-size: $font-size-xs;
+  line-height: 1;
+  padding: 8rpx 12rpx;
+  border-radius: $radius-xs;
+  margin: 0 $spacing-sm $spacing-xs 0;
+  color: $color-text-secondary;
+  background: $color-bg-hover;
+  white-space: nowrap;
+}
+
+.brand {
+  color: $color-primary;
+  background: $color-primary-bg;
+}
+
+.gold {
+  color: $color-gold;
+  background: $color-gold-bg;
+  font-weight: $font-weight-medium;
+}
+
+.gradeA {
+  color: $color-primary;
+  background: $color-primary-bg;
+  font-weight: $font-weight-medium;
+}
+
+.gradeB {
+  color: $color-warning;
+  background: #fff3e5;
+}
+
+.gradeC {
+  color: $color-text-tertiary;
+  background: $color-bg-hover;
+}
+
+/* 说人话强调块 */
+.humanCard {
+  background: $color-primary-bg;
+  border-radius: $radius-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.humanLabel {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.humanText {
+  font-size: $font-size-md;
+  color: $color-primary-dark;
+  line-height: $line-height-loose;
+}
+
+/* 字段 */
+.field {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  overflow: hidden;
+}
+
+.fieldHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-sm;
+}
+
+.fieldLabel {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-text-tertiary;
+  letter-spacing: 2rpx;
+}
+
+.fieldText {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  line-height: $line-height-loose;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.copyAll {
+  font-size: $font-size-sm;
+  color: $color-primary;
+}
+
+.disclaimer {
+  display: block;
+  padding: $spacing-md $spacing-lg;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  line-height: $line-height-loose;
+  text-align: center;
+}
+
+/* 底部操作栏 */
+.bottomBar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: $spacing-sm;
+  padding: $spacing-sm $page-padding;
+  padding-bottom: calc(#{$spacing-sm} + env(safe-area-inset-bottom));
+  background: $color-bg-card;
+  box-shadow: $shadow-float;
+}
+
+.navBtn {
+  flex: 1;
+  height: $button-height-lg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.navBtnDisabled {
+  opacity: 0.4;
+}
+
+.navText {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  white-space: nowrap;
+}
+
+.favBtn {
+  flex: 1.4;
+  height: $button-height-lg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-button;
+  background: $color-primary;
+  transition: all $transition-fast;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.favBtnActive {
+  background: $color-primary-bg;
+}
+
+.favText {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-white;
+  white-space: nowrap;
+}
+
+.favTextActive {
+  color: $color-primary;
+}

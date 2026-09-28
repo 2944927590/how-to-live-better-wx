@@ -1,0 +1,37 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  padding: $spacing-lg $page-padding $spacing-xl;
+}
+
+.introCard {
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.introText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-loose;
+}
+
+.introClamp {
+  @include text-ellipsis-multi(3);
+}
+
+.introToggle {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-primary;
+}
+
+.count {
+  display: block;
+  margin: $spacing-sm 0 $spacing-md;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}

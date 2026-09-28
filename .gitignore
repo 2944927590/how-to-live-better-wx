@@ -1,0 +1,24 @@
+# 依赖与构建产物
+node_modules/
+dist/
+.temp/
+.rn_temp/
+
+# 微信上传凭据（严禁提交）
+*.key
+.env
+.env.local
+preview-qrcode.png
+
+# 系统/编辑器
+.DS_Store
+*.log
+.pai/
+
+# 构建缓存
+.swc/
+dist/
+
+# 同步脚本运行时
+scripts/logs/
+scripts/.sync-state

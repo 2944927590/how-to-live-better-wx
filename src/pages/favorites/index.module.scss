@@ -1,0 +1,87 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  padding: $spacing-lg $page-padding $spacing-xl;
+}
+
+.empty {
+  padding: 160rpx $spacing-lg;
+  text-align: center;
+}
+
+.emptyIcon {
+  display: block;
+  font-size: 88rpx;
+  margin-bottom: $spacing-md;
+}
+
+.emptyText {
+  display: block;
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+}
+
+.emptyHint {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.blockTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: $spacing-md 0;
+}
+
+.titleText {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.clearBtn {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  padding: $spacing-xs $spacing-sm;
+}
+
+.historyItem {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  margin-bottom: $spacing-sm;
+  transition: all $transition-fast;
+
+  &:active {
+    background: $color-bg-hover;
+  }
+}
+
+.historyIndex {
+  flex-shrink: 0;
+  min-width: 56rpx;
+  margin-right: $spacing-sm;
+  font-size: $font-size-xs;
+  color: $color-primary;
+  background: $color-primary-bg;
+  border-radius: $radius-xs;
+  padding: 4rpx 8rpx;
+  text-align: center;
+}
+
+.historyTitle {
+  flex: 1;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.historyArrow {
+  flex-shrink: 0;
+  margin-left: $spacing-sm;
+  color: $color-text-disabled;
+}
