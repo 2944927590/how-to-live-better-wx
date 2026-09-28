@@ -1,8 +1,8 @@
 {
   "miniprogramRoot": "./",
-  "projectname": "taro_template",
-  "description": "taro_template",
-  "appid": "touristappid",
+  "projectname": "how-to-live-better",
+  "description": "高性价比人生指南离线版",
+  "appid": "tt40c53678debd74b201",
   "setting": {
     "urlCheck": true,
     "es6": false,
