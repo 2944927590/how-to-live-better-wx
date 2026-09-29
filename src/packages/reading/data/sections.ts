@@ -33,6 +33,7 @@ import { section as s30 } from './s30';
 import { section as s31 } from './s31';
 import { section as s32 } from './s32';
 import { section as s33 } from './s33';
+import { section as s34 } from './s34';
 
 export const SECTIONS_DATA: Record<number, BookSection> = {
   1: s01,
@@ -68,4 +69,5 @@ export const SECTIONS_DATA: Record<number, BookSection> = {
   31: s31,
   32: s32,
   33: s33,
+  34: s34,
 };
