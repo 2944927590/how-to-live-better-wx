@@ -3,7 +3,7 @@
  *
  * 输入（只读）：
  *   /Users/xiezhiqiang/HowToLiveBetter/HowToLiveBetter/book/*.md    34 节 650 条
- *   /Users/xiezhiqiang/HowToLiveBetter/HowToLiveBetter/docs/        5 篇长文（排除 引用对照.md 与 核实记录/）
+ *   /Users/xiezhiqiang/HowToLiveBetter/HowToLiveBetter/docs/        8 篇长文（排除 引用对照.md 与 核实记录/）
  * 输出：
  *   src/data/book-index.ts                          节索引 + 长文索引 + META（主包）
  *   src/packages/reading/data/sNN.ts                按节数据（分包）
@@ -31,6 +31,9 @@ const DOCS = [
   { key: 'emergency-kit', file: '家庭应急装备清单.md' },
   { key: 'stranger-help', file: '遇到陌生人出事该不该停.md' },
   { key: 'circadian', file: '生物钟和夜班.md' },
+  { key: 'layoff-checklist', file: '被裁了之后先做什么.md' },
+  { key: 'having-a-baby', file: '孩子出生前后要办的事.md' },
+  { key: 'chronic-diagnosis', file: '刚确诊慢性病之后.md' },
 ];
 
 function fail(msg) {
@@ -191,6 +194,8 @@ function parseDoc(file) {
     if ((m = /^(\d+)[.、]\s+(.+)$/.exec(line))) { flushPara(); blocks.push({ t: 'li', ord: Number(m[1]), text: rewriteLinks(m[2], file) }); continue; }
     if ((m = /^>\s?(.*)$/.exec(line))) { flushPara(); blocks.push({ t: 'quote', text: rewriteLinks(m[1], file) }); continue; }
     if (/^<!--.*-->$/.test(line) || /^[-*_]{3,}$/.test(line)) { flushPara(); continue; }
+    // 原站页首的「← 回总目录」是跳回 README 的导航行，小程序内无对应目标，整行丢掉（同 parseBook）
+    if (line.startsWith('[← 回总目录]')) { flushPara(); continue; }
     para.push(rewriteLinks(line, file));
   }
   flushPara(); flushTable();
@@ -228,6 +233,16 @@ const docsParsed = DOCS.map((d) => {
   docTitles.push(parsed.title);
   return { ...d, ...parsed };
 });
+
+// 防漏：原书 docs/ 里新增了长文但没进 DOCS 白名单，构建直接失败（排除 引用对照.md 与 核实记录/）
+{
+  const known = new Set(DOCS.map((d) => d.file));
+  const onDisk = fs.readdirSync(DOCS_DIR)
+    .filter((f) => f.endsWith('.md') && f !== '引用对照.md')
+    .sort();
+  const missing = onDisk.filter((f) => !known.has(f));
+  if (missing.length) fail(`原书 docs/ 新增长文未加入 DOCS 白名单：${missing.join('、')}`);
+}
 
 // 分包：按节
 for (const s of sections) {
