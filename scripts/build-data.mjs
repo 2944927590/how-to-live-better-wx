@@ -21,6 +21,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC_REPO = '/Users/xiezhiqiang/HowToLiveBetter/HowToLiveBetter';
 const BOOK_DIR = path.join(SRC_REPO, 'book');
 const DOCS_DIR = path.join(SRC_REPO, 'docs');
+const SRC_GITHUB_BLOB = 'https://github.com/eternity4719/HowToLiveBetter/blob';
 const OUT_MAIN = path.join(ROOT, 'src', 'data');
 const OUT_SUB = path.join(ROOT, 'src', 'packages', 'reading', 'data');
 
@@ -42,7 +43,13 @@ function fail(msg) {
 }
 const read = (p) => fs.readFileSync(p, 'utf8');
 
-/** 相对链接改写：../docs/X.md → doc:key；../book/NN-*.md → sec:NN；其余相对链接去掉只留文字 */
+/**
+ * 相对链接改写：
+ *   ../docs/X.md     → doc:key   小程序内跳长文
+ *   ../book/NN-*.md  → sec:NN    小程序内跳节
+ *   其它仓内相对路径 → GitHub 绝对链接（核实记录、引用对照等不进包，复制后浏览器打开）
+ *   其余无法识别的 → 丢弃只留文字
+ */
 function rewriteLinks(text, warnCtx) {
   return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, target) => {
     if (/^https?:\/\//.test(target)) return `[${label}](${target})`;
@@ -53,6 +60,18 @@ function rewriteLinks(text, warnCtx) {
     }
     m = /^(?:\.\.\/)?book\/(\d+)-[^/]*\.md$/.exec(target);
     if (m) return `[${label}](sec:${m[1]})`;
+    // 不进小程序包、但在原书仓库里真实存在的路径 → 指向 GitHub，读者复制链接可打开。
+    // book/ 正文里的链接相对仓库根；docs/ 长文里的相对 docs/ 目录（如 核实记录/xxx.md）。
+    for (const base of ['', 'docs/', 'book/']) {
+      const rel = target.replace(/^(\.\.\/)?/, '');
+      const abs = path.join(SRC_REPO, base + rel);
+      if (/\.md$/.test(rel) && !rel.includes('..') && fs.existsSync(abs)) {
+        const repoRel = (base + rel).replace(/^\.\//, '');
+        // 路径含中文，逐段编码，复制到浏览器才能直接打开
+        const encoded = repoRel.split('/').map(encodeURIComponent).join('/');
+        return `[${label}](${SRC_GITHUB_BLOB}/main/${encoded})`;
+      }
+    }
     console.warn(`[build-data] 丢弃未识别的相对链接：${warnCtx} → ${target}`);
     return label;
   });
