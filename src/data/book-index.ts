@@ -5,4 +5,4 @@ export const SECTIONS_INDEX: SectionIndexItem[] = [{"n":1,"title":"不要早死"
 
 export const DOCS_INDEX: DocIndexItem[] = [{"key":"marriage","title":"结婚划不划算：把一笔糊涂账拆成五笔清楚账"},{"key":"platform-licenses","title":"做平台要办哪些证：对照表与选服务器的决策表"},{"key":"emergency-kit","title":"家庭应急装备清单：买什么、放哪里、多久检查一次"},{"key":"stranger-help","title":"路上遇到陌生人出事，走开还是停下"},{"key":"circadian","title":"身体怎么认时间，夜班又为什么伤人"},{"key":"layoff-checklist","title":"被裁了之后先做什么"},{"key":"having-a-baby","title":"孩子出生前后要办的事：按时间排的清单"},{"key":"chronic-diagnosis","title":"刚确诊慢性病之后：头一周、头三个月和以后各做什么"}];
 
-export const BOOK_META: BookMeta = {"total":658,"grades":{"A":431,"B":174,"C":53},"ratios":{"极高":112,"高":299,"一般":247},"disputes":66,"todos":3,"builtAt":"2026-10-05","sourceCommit":"dcccdd9"};
+export const BOOK_META: BookMeta = {"total":658,"grades":{"A":431,"B":174,"C":53},"ratios":{"极高":112,"高":299,"一般":247},"disputes":66,"todos":3,"builtAt":"2026-10-05","sourceCommit":"2fa2009"};
