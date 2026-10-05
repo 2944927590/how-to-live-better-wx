@@ -1,6 +1,6 @@
 # 高性价比人生指南 · 小程序版
 
-《[高性价比人生指南](https://github.com/eternity4719/HowToLiveBetter)》的离线小程序版。全书 **650 条建议 / 34 节 / 8 篇长文**，内置在包里，无网络也能看、能搜、能收藏。
+《[高性价比人生指南](https://github.com/eternity4719/HowToLiveBetter)》的离线小程序版。全书 **658 条建议 / 34 节 / 8 篇长文**，内置在包里，无网络也能看、能搜、能收藏。
 
 | 微信版 | 抖音版 |
 |---|---|
@@ -78,7 +78,7 @@ how-to-live-better-wx/
 
 ## 数据管线
 
-小程序里的 650 条数据不是手搬的，是 [scripts/build-data.mjs](scripts/build-data.mjs) 从原书仓库（`/Users/xiezhiqiang/HowToLiveBetter/HowToLiveBetter`）的 `book/*.md` 和 `docs/*.md` 解析生成的：
+小程序里的 658 条数据不是手搬的，是 [scripts/build-data.mjs](scripts/build-data.mjs) 从原书仓库（`/Users/xiezhiqiang/HowToLiveBetter/HowToLiveBetter`）的 `book/*.md` 和 `docs/*.md` 解析生成的：
 
 1. 逐行解析 34 个节文件：节标题、节引言、每条的成本标签 / 说人话 / 收益 / 证据等级 / 来源 / 备注
 2. 按 [原站公式](https://github.com/eternity4719/HowToLiveBetter/blob/main/index.html)（532-533 行算法 + 881 行权重表）计算性价比档（极高 / 高 / 一般）
@@ -154,12 +154,12 @@ npm run upload:tt:preview  # 构建并生成预览二维码
 
 | 指标 | 值 |
 |---|---|
-| 条目总数 | 650 |
-| 证据分级 | A 428 · B 171 · C 51 |
-| 性价比档 | 极高 111 · 高 294 · 一般 245 |
-| 标注争议 | 65 |
+| 条目总数 | 658 |
+| 证据分级 | A 431 · B 174 · C 53 |
+| 性价比档 | 极高 112 · 高 299 · 一般 247 |
+| 标注争议 | 66 |
 | 待核实 | 3 |
-| 源版本 | `fcc93eb` |
+| 源版本 | `dcccdd9` |
 | 分包数据 | ~1.7 MB |
 
 这些数字构建时自动对账（与原书 README 徽章比对），任何不一致都会让构建失败，保证小程序内容和原书正文严格同步。

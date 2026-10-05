@@ -2,7 +2,7 @@
  * 数据管线：读取《高性价比人生指南》原仓库正文，生成小程序内置数据。
  *
  * 输入（只读）：
- *   /Users/xiezhiqiang/HowToLiveBetter/HowToLiveBetter/book/*.md    34 节 650 条
+ *   /Users/xiezhiqiang/HowToLiveBetter/HowToLiveBetter/book/*.md    34 节 658 条
  *   /Users/xiezhiqiang/HowToLiveBetter/HowToLiveBetter/docs/        8 篇长文（排除 引用对照.md 与 核实记录/）
  * 输出：
  *   src/data/book-index.ts                          节索引 + 长文索引 + META（主包）
@@ -11,7 +11,7 @@
  *   src/packages/reading/data/dN.ts / docs-data.ts  长文
  *
  * 性价比档公式照抄原仓库 index.html:532-533 与 COST_W(index.html:881)。
- * 校验基准（README 徽章）：650 条；A 428 / B 171 / C 51；性价比 极高 111 / 高 294 / 一般 245。
+ * 校验基准（README 徽章）：658 条；A 431 / B 174 / C 53；性价比 极高 112 / 高 299 / 一般 247。
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -213,10 +213,10 @@ const result = parseBook();
 const { sections, total, grades, ratios, disputes, todos } = result;
 
 // 对账（README 徽章基准）
-if (total !== 650) fail(`条目总数 ${total} ≠ 650`);
-if (grades.A !== 428 || grades.B !== 171 || grades.C !== 51) fail(`证据分级 ${JSON.stringify(grades)} ≠ A428/B171/C51`);
-if (ratios['极高'] !== 111 || ratios['高'] !== 294 || ratios['一般'] !== 245) {
-  console.warn(`[build-data] 注意：性价比档分布 ${JSON.stringify(ratios)} 与 README（111/294/245）不一致，请人工核对`);
+if (total !== 658) fail(`条目总数 ${total} ≠ 658`);
+if (grades.A !== 431 || grades.B !== 174 || grades.C !== 53) fail(`证据分级 ${JSON.stringify(grades)} ≠ A431/B174/C53`);
+if (ratios['极高'] !== 112 || ratios['高'] !== 299 || ratios['一般'] !== 247) {
+  console.warn(`[build-data] 注意：性价比档分布 ${JSON.stringify(ratios)} 与 README（112/299/247）不一致，请人工核对`);
 }
 
 fs.mkdirSync(OUT_MAIN, { recursive: true });
